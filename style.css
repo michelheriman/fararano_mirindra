@@ -1,0 +1,221 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(7, 148, 203, 0.5);
+  }
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.logo {
+    width: 75px;
+  }
+
+.hero {
+    background-image: url('https://via.placeholder.com/1200x500');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.pro {
+    background-image: url('https://via.placeholder.com/1600x500');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin: 0;
+    text-shadow: 0 0 10px rgb(0, 21, 247), /* First halo layer */
+                0 0 20px rgba(255, 255, 255, 0.6), /* Second halo layer */
+                0 0 30px rgba(255, 255, 255, 0.4); /* Third halo layer */
+}
+
+.hero h2 {
+    font-size: 20px;
+    margin: 0;
+    text-shadow: 0 0 10px rgb(2, 2, 2), /* First halo layer */
+                0 0 20px rgba(255, 255, 255, 0.6), /* Second halo layer */
+                0 0 30px rgba(255, 255, 255, 0.4); /* Third halo layer */
+}
+
+.hero p {
+    font-size: 24px;
+    padding: 10px;
+    text-shadow: 0 0 10px rgb(0, 21, 247), /* First halo layer */
+                0 0 20px rgba(255, 255, 255, 0.6), /* Second halo layer */
+                0 0 30px rgba(255, 255, 255, 0.4); /* Third halo layer */
+}
+
+.hero button {
+    font-size: 20px;
+    padding: 10px 20px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.hero button:hover {
+    background: #0056b3;
+}
+
+.content {
+    padding: 50px;
+    text-align: center;
+}
+
+footer {
+    background: #3FB9C2;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: flex;
+    bottom: 0;
+    width: 100%;
+}
+.card {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    padding: 10px;
+    width: 30%;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card-container {
+    display: flex; /* Establishes a flex container */
+    justify-content: center; /* Horizontally center aligns the flex items */
+    align-items: center; /* Vertically center aligns the flex items */
+    gap: 20px; /* Adds space between the cards */
+}
+
+.founder-photo {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.founder-info {
+    padding: 15px;
+}
+
+.founder-info h2 {
+    margin-top: 0;
+}
+
+.founder-info p {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+}
+
+#team{
+    align-items: center;
+}
+
+
+.profile-card {
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    width: 100%;
+}
+
+.profile-text {
+    background-color: #000;
+    color: white;
+    padding: 30px;
+    width: 50%;
+}
+
+.profile-text h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.profile-text h2 {
+    margin: 10px 0;
+    font-weight: normal;
+    color: #aaa;
+}
+
+.profile-text p {
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+.profile-text .social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.profile-image {
+    width: 50%;
+    background-color: #fff;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+}

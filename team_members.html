@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Slider</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <style>
+        /*
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+            */
+
+        .swiper-container {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            min-height: 80vh;
+        }
+
+        .profile-card {
+            display: flex;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(24, 73, 171, 0.2);
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .profile-text {
+            background-color: #434dbd;
+            color: white;
+            padding: 30px;
+            width: 50%;
+        }
+
+        .profile-text h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .profile-text h2 {
+            margin: 10px 0;
+            font-weight: normal;
+            color: #aaa;
+        }
+
+        .profile-text p {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        .profile-text .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .profile-image {
+            width: 50%;
+            background-color: #fff;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper-pagination-bullet {
+            background: white !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slider main container -->
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+                <div class="profile-card">
+                    <div class="profile-text">
+                        <h1>Michel Raherimanantsoa</h1>
+                        <h2>Agronomist | Geospatial Data Scientist</h2>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                        <p>With a profound passion for spatial analysis and programming (particularly Python), I am constantly on the lookout for new adventures that present opportunities to develop tools designed to tackle challenges or deliver innovative solutions. Being deeply committed to sustainable development, I aspire to contribute to the battle against climate change, poverty, and environmental degradation.</p>
+                    </div>
+                    <div class="profile-image">
+                        <img src="./assets/DSC_8109.jpg" alt="Michel Raherimanantsoa">
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+                <div class="profile-card">
+                    <div class="profile-text">
+                        <h1>Rindra Gerald Ranaivosoa</h1>
+                        <h2>Software Engineer| Fullstack Dev</h2>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                        <p>5+ experiences in mobile app development. I am passionate </p>
+                    </div>
+                    <div class="profile-image">
+                        <img src="./assets/rix.jpeg" alt="Another Team Member">
+                    </div>
+                </div>
+            </div>
+            <!-- Add more slides as needed -->
+        </div>
+
+        <!-- Pagination (dots at the bottom of the slider) -->
+        <div class="swiper-pagination"></div>
+
+        <!-- Navigation buttons -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
+</body>
+</html>
