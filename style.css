@@ -120,6 +120,17 @@ footer {
     width: 30%;
 }
 
+.card-spec {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+
 .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
@@ -218,4 +229,21 @@ footer {
     justify-content: center;
     height: 100vh;
     padding: 20px;
+}
+
+#map { height: 450px;
+    width: 400px; 
+    position: relative; 
+    margin-left: 10px;
+    top: 12px;
+    border: 2px solid red;
+    transform: translate(0%, 0%)
+}
+
+video {
+    width: 100%;
+    max-width: 1000px; /* Set a maximum width for larger screens */
+    height: auto; /* Maintain aspect ratio */
+    display: flex;
+    margin: 0 auto; /* Center the video */
 }
