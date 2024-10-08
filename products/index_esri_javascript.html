@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapuno Smart</title>
+  <link rel="stylesheet" href="./styles_map.css">
+  <link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.26/"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="./test_load.js"></script>
+</head>
+<body>
+  <header>
+    <img src="./logo.png" alt="Fararano Mirindra logo" class="logo">
+  </header>
+  <main>
+    <div id="viewDiv">
+        <select id="basemapSelect">
+            <option value="topo-vector">Default topo-vector</option>
+            <option value="streets">Streets</option>
+            <option value="satellite">Satellite</option>
+            <option value="hybrid">Hybrid</option>
+            <option value="topo">Topographic</option>
+            <option value="gray">Gray</option>
+            <option value="dark-gray">Dark Gray</option>
+            <option value="oceans">Oceans</option>
+            <option value="national-geographic">National Geographic</option>
+            <option value="terrain">Terrain</option>
+            <option value="osm">OpenStreetMap</option>
+          </select>
+    </div>
+    
+  </main>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BI Dashboard</title>
+
+  <!-- Chart.js (for chart visualizations) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7f6;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 80%;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #34495e;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .topbar h1 {
+      margin: 0;
+    }
+
+    .dashboard {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      width: 48%;
+    }
+
+    .chart-container {
+      position: relative;
+      height: 300px;
+    }
+
+    .filter {
+      margin-bottom: 20px;
+    }
+
+    select {
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <h1>Simple BI Dashboard</h1>
+  </div>
+
+  <div class="container">
+    <!-- Filter dropdown -->
+    <div class="filter">
+      <label for="category-select">Select Category:</label>
+      <select id="category-select">
+        <option value="sales">Sales</option>
+        <option value="profit">Profit</option>
+        <option value="expenses">Expenses</option>
+      </select>
+    </div>
+
+    <!-- Dashboard Cards -->
+    <div class="dashboard">
+      <!-- Card for Bar Chart -->
+      <div class="card">
+        <h2>Category Overview</h2>
+        <div class="chart-container">
+          <canvas id="barChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Card for Pie Chart -->
+      <div class="card">
+        <h2>Category Distribution</h2>
+        <div class="chart-container">
+          <canvas id="pieChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Sample data (replace with fetched data)
+    const data = {
+      sales: {
+        categories: ['Q1', 'Q2', 'Q3', 'Q4'],
+        values: [100, 150, 200, 250]
+      },
+      profit: {
+        categories: ['Q1', 'Q2', 'Q3', 'Q4'],
+        values: [50, 70, 100, 120]
+      },
+      expenses: {
+        categories: ['Q1', 'Q2', 'Q3', 'Q4'],
+        values: [80, 90, 110, 130]
+      }
+    };
+
+    // Chart.js Bar Chart Configuration
+    const barCtx = document.getElementById('barChart').getContext('2d');
+    const pieCtx = document.getElementById('pieChart').getContext('2d');
+
+    let barChart;
+    let pieChart;
+
+    function updateCharts(category) {
+      const chartData = data[category];
+
+      // Update Bar Chart
+      if (barChart) {
+        barChart.destroy();
+      }
+      barChart = new Chart(barCtx, {
+        type: 'bar',
+        data: {
+          labels: chartData.categories,
+          datasets: [{
+            label: category.charAt(0).toUpperCase() + category.slice(1),
+            data: chartData.values,
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+
+      // Update Pie Chart
+      if (pieChart) {
+        pieChart.destroy();
+      }
+      pieChart = new Chart(pieCtx, {
+        type: 'pie',
+        data: {
+          labels: chartData.categories,
+          datasets: [{
+            label: 'Distribution',
+            data: chartData.values,
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)'
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)'
+            ],
+            borderWidth: 1
+          }]
+        }
+      });
+    }
+
+    // Fetch data and initialize charts (for demonstration, using static data)
+    document.getElementById('category-select').addEventListener('change', function() {
+      const selectedCategory = this.value;
+      updateCharts(selectedCategory);
+    });
+
+    // Initialize charts with default category 'sales'
+    updateCharts('sales');
+  </script>
+</body>
+</html>
